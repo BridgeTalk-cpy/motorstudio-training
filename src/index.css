@@ -1,0 +1,608 @@
+:root {
+  --bg: #f4f5f7;
+  --bg-raised: #ffffff;
+  --bg-input: #ffffff;
+  --ink: #101317;
+  --ink-soft: #5b6270;
+  --navy: #12294d;
+  --navy-soft: #1f3d6e;
+  --border: #dfe2e8;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+body {
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+}
+
+button {
+  font-family: inherit;
+}
+
+.accent-dot {
+  color: var(--navy);
+}
+
+/* ---------- Join / Instructor login ---------- */
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--ink);
+}
+
+.join-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(16, 19, 23, 0.06);
+}
+
+.brand-accent-bar {
+  width: 48px;
+  height: 4px;
+  background: var(--navy);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.join-title {
+  color: var(--ink);
+  font-size: 22px;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.join-sub {
+  color: var(--ink-soft);
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+.join-input {
+  width: 100%;
+  background: #f7f8fa;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--ink);
+  padding: 14px 16px;
+  font-size: 16px;
+  margin-bottom: 14px;
+  outline: none;
+}
+
+.join-input:focus {
+  border-color: var(--navy);
+}
+
+.join-btn {
+  width: 100%;
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.join-btn:hover:not(:disabled) {
+  background: var(--navy-soft);
+}
+
+.join-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* ---------- Trainee page ---------- */
+.student-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+}
+
+.student-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 5;
+}
+
+.student-header-label {
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+.student-header-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.input-section {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.section-num {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.field-box {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-label {
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.field-input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--ink);
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+}
+
+.field-input:focus {
+  border-color: var(--navy);
+}
+
+.field-input[readonly] {
+  background: #f7f8fa;
+  color: var(--ink-soft);
+}
+
+.field-status {
+  text-align: right;
+  font-size: 12px;
+  margin-top: 6px;
+  min-height: 16px;
+  color: #9aa0ab;
+}
+
+.field-status.typing {
+  color: var(--ink-soft);
+}
+.field-status.saving {
+  color: var(--navy-soft);
+}
+.field-status.saved {
+  color: var(--navy);
+}
+
+.readonly-text {
+  background: #f7f8fa;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  white-space: pre-wrap;
+  color: var(--ink);
+  min-height: 48px;
+}
+
+.student-footer-note {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* ---------- Q1 choice pair ---------- */
+.choice-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.choice-box {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: var(--bg-raised);
+}
+
+.choice-label {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.choice-badge {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.choice-badge-yes {
+  background: var(--navy);
+}
+
+.choice-badge-no {
+  background: #6b7280;
+}
+
+/* ---------- Q3 four-box grid ---------- */
+.quad-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ---------- Q4 parking WHY/WHAT/HOW table ---------- */
+.parking-table-wrap {
+  width: 100%;
+}
+
+.parking-table {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.parking-row {
+  display: grid;
+  grid-template-columns: 84px 1.3fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.parking-row:last-child {
+  border-bottom: none;
+}
+
+.parking-row-head {
+  background: #f7f8fa;
+}
+
+.parking-row-head .parking-cell {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 10px;
+}
+
+.parking-cell {
+  padding: 10px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.parking-cell:last-child {
+  border-right: none;
+}
+
+.parking-cell-step {
+  justify-content: center;
+  color: #ffffff;
+  background: var(--navy);
+  font-weight: 800;
+  font-size: 13px;
+  text-align: center;
+}
+
+.parking-cell-q {
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.parking-input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--ink);
+  padding: 8px 10px;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+}
+
+.parking-input:focus {
+  border-color: var(--navy);
+}
+
+.parking-input[readonly] {
+  background: #f7f8fa;
+  color: var(--ink-soft);
+}
+
+/* ---------- Instructor dashboard ---------- */
+.instructor-page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.instructor-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.instructor-header h1 {
+  color: var(--ink);
+  font-size: 26px;
+  margin: 0;
+  font-weight: 800;
+}
+
+.instructor-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.instructor-count {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.reset-btn:hover:not(:disabled) {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.reset-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.trainee-card-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f7f8fa;
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.trainee-card-delete:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.empty-note {
+  color: var(--ink-soft);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.trainee-card {
+  position: relative;
+  text-align: left;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  color: var(--ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 10px rgba(16, 19, 23, 0.04);
+}
+
+.trainee-card:hover {
+  border-color: var(--navy);
+  box-shadow: 0 4px 16px rgba(16, 19, 23, 0.08);
+}
+
+.trainee-card-name {
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.trainee-card-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  align-items: flex-start;
+}
+
+.trainee-card-tag {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.trainee-card-text {
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 19, 23, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal-panel {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background: var(--bg-raised);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-name {
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 800;
+  flex: none;
+}
+
+.modal-nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.modal-nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #f7f8fa;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal-nav-dot.active {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.modal-close {
+  flex: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .choice-pair {
+    grid-template-columns: 1fr;
+  }
+  .quad-grid {
+    grid-template-columns: 1fr;
+  }
+  .parking-row {
+    grid-template-columns: 1fr;
+  }
+  .parking-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .parking-cell:last-child {
+    border-bottom: none;
+  }
+}

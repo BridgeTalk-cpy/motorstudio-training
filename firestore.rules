@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 내부 1회성 교육용 간단 규칙: 인증 없이 participants 컬렉션만 열어두되,
+    // 교육 이후 자동으로 잠기도록 날짜 제한을 둡니다. 날짜는 필요에 맞게 바꾸세요.
+    match /participants/{participantId} {
+      allow read, write: if request.time < timestamp.date(2026, 9, 14);
+    }
+  }
+}
