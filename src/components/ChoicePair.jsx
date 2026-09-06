@@ -1,7 +1,8 @@
 import { StatusTag } from "./FieldBox";
 
 // Q1: "가이드를 맡기겠다" / "못맡기겠다" 두 칸에 각각 이유를 작성하는 컴포넌트
-export default function ChoicePair({ yesField, noField, readOnly }) {
+// yes / no 는 { value, onChange, status } 형태 (onChange는 이미 필드명이 연결된, 값만 받는 함수)
+export default function ChoicePair({ yes, no, readOnly }) {
   return (
     <div className="choice-pair">
       <div className="choice-box choice-box-yes">
@@ -13,11 +14,11 @@ export default function ChoicePair({ yesField, noField, readOnly }) {
           className="field-input"
           rows={3}
           placeholder="맡기겠다고 판단한 이유를 적어주세요"
-          value={yesField.value}
+          value={yes.value}
           readOnly={readOnly}
-          onChange={(e) => yesField.onChange(e.target.value)}
+          onChange={(e) => yes.onChange(e.target.value)}
         />
-        {!readOnly && <StatusTag status={yesField.status} />}
+        {!readOnly && <StatusTag status={yes.status} />}
       </div>
       <div className="choice-box choice-box-no">
         <div className="choice-label">
@@ -28,11 +29,11 @@ export default function ChoicePair({ yesField, noField, readOnly }) {
           className="field-input"
           rows={3}
           placeholder="못맡기겠다고 판단한 이유를 적어주세요"
-          value={noField.value}
+          value={no.value}
           readOnly={readOnly}
-          onChange={(e) => noField.onChange(e.target.value)}
+          onChange={(e) => no.onChange(e.target.value)}
         />
-        {!readOnly && <StatusTag status={noField.status} />}
+        {!readOnly && <StatusTag status={no.status} />}
       </div>
     </div>
   );

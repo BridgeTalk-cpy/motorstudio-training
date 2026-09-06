@@ -153,8 +153,8 @@ export default function Instructor() {
                 <div className="field-box">
                   <div className="field-label">가이드를 맡기겠다 / 못맡기겠다</div>
                   <ChoicePair
-                    yesField={{ value: expandedParticipant.entrustYes || "" }}
-                    noField={{ value: expandedParticipant.entrustNo || "" }}
+                    yes={{ value: expandedParticipant.entrustYes || "", onChange: () => {} }}
+                    no={{ value: expandedParticipant.entrustNo || "", onChange: () => {} }}
                     readOnly
                   />
                 </div>

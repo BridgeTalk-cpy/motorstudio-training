@@ -86,7 +86,10 @@ export default function Trainee() {
           <div className="field-label">
             한 사람의 다양한 표정을 확인 후 "가이드를 맡기겠다" 또는 "못맡기겠다"를 선택하고 그 이유를 작성해 주세요.
           </div>
-          <ChoicePair yesField={entrustYes} noField={entrustNo} />
+          <ChoicePair
+            yes={{ value: entrustYes.value, status: entrustYes.status, onChange: entrustYes.onChange("entrustYes") }}
+            no={{ value: entrustNo.value, status: entrustNo.status, onChange: entrustNo.onChange("entrustNo") }}
+          />
         </div>
       </section>
 
